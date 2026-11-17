@@ -1,0 +1,19 @@
+{
+  "name": "validate-error",
+  "description": "C\u00f3digo inv\u00e1lido: mismo formato de error que /api/run.",
+  "endpoint": "POST /api/validate",
+  "httpStatus": 400,
+  "request": {
+    "code": "[[]"
+  },
+  "response": {
+    "version": 1,
+    "error": {
+      "code": "UNBALANCED_BRACKET",
+      "message": "Falta cerrar el '[' de la posici\u00f3n 0",
+      "position": 0,
+      "line": 1,
+      "column": 1
+    }
+  }
+}

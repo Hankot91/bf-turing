@@ -1,0 +1,38 @@
+{
+  "name": "run-wrap",
+  "description": "Wrap-around: 0 - 1 = 255 con cellSize 256.",
+  "endpoint": "POST /api/run",
+  "httpStatus": 200,
+  "request": {
+    "code": "-.",
+    "input": "",
+    "cellSize": 256,
+    "maxSteps": 10000
+  },
+  "response": {
+    "version": 1,
+    "program": {
+      "instructions": [
+        {"index": 0, "op": "-", "src": 0, "match": null},
+        {"index": 1, "op": ".", "src": 1, "match": null}
+      ],
+      "bracketPairs": []
+    },
+    "steps": [
+      {"n": 0, "pc": 0, "op": "-", "ptr": 0, "write": {"index": 0, "value": 255}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q0", "read": 0, "to": "q1", "write": 255, "move": "N"}},
+      {"n": 1, "pc": 1, "op": ".", "ptr": 0, "write": null, "output": "\u00ff", "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q1", "read": 255, "to": "qhalt", "write": 255, "move": "N"}}
+    ],
+    "result": {
+      "status": "halted",
+      "totalSteps": 2,
+      "output": "\u00ff",
+      "finalPtr": 0,
+      "finalTape": {
+        "offset": 0,
+        "cells": [
+          255
+        ]
+      }
+    }
+  }
+}

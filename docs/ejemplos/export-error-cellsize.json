@@ -1,0 +1,21 @@
+{
+  "name": "export-error-cellsize",
+  "description": "Error: modo pure con alfabeto demasiado grande.",
+  "endpoint": "POST /api/export",
+  "httpStatus": 400,
+  "request": {
+    "code": "+",
+    "mode": "pure",
+    "cellSize": 256
+  },
+  "response": {
+    "version": 1,
+    "error": {
+      "code": "INVALID_CELL_SIZE",
+      "message": "el modo 'pure' requiere cellSize <= 16",
+      "position": null,
+      "line": null,
+      "column": null
+    }
+  }
+}

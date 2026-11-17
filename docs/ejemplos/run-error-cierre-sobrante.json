@@ -1,0 +1,22 @@
+{
+  "name": "run-error-cierre-sobrante",
+  "description": "Error: ']' sin '[' correspondiente.",
+  "endpoint": "POST /api/run",
+  "httpStatus": 400,
+  "request": {
+    "code": "+]",
+    "input": "",
+    "cellSize": 256,
+    "maxSteps": 10000
+  },
+  "response": {
+    "version": 1,
+    "error": {
+      "code": "UNEXPECTED_CLOSE",
+      "message": "']' sin '[' correspondiente en la posici\u00f3n 1",
+      "position": 1,
+      "line": 1,
+      "column": 2
+    }
+  }
+}

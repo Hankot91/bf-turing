@@ -1,0 +1,32 @@
+{
+  "name": "export-alto-io",
+  "description": "Alto nivel con entrada/salida (campo io).",
+  "endpoint": "POST /api/export",
+  "httpStatus": 200,
+  "request": {
+    "code": ",.",
+    "mode": "high",
+    "cellSize": 256
+  },
+  "response": {
+    "version": 1,
+    "mode": "high",
+    "states": [
+      "q0",
+      "q1",
+      "qhalt"
+    ],
+    "alphabet": {
+      "size": 256,
+      "blank": 0
+    },
+    "initial": "q0",
+    "accepting": [
+      "qhalt"
+    ],
+    "transitions": [
+      {"from": "q0", "read": "*", "to": "q1", "write": {"op": "input"}, "move": "N", "io": "in"},
+      {"from": "q1", "read": "*", "to": "qhalt", "write": {"op": "keep"}, "move": "N", "io": "out"}
+    ]
+  }
+}

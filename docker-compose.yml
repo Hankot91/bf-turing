@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bf-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+    networks:
+      - turing-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: bf-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - turing-network
+    environment:
+      - REACT_APP_API_URL=http://localhost:8080
+    restart: unless-stopped
+
+networks:
+  turing-network:
+    driver: bridge

@@ -1,0 +1,44 @@
+{
+  "name": "export-pura-cero",
+  "description": "MT pura para +[-] con alfabeto reducido (k=3).",
+  "endpoint": "POST /api/export",
+  "httpStatus": 200,
+  "request": {
+    "code": "+[-]",
+    "mode": "pure",
+    "cellSize": 3
+  },
+  "response": {
+    "version": 1,
+    "mode": "pure",
+    "states": [
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "qhalt"
+    ],
+    "alphabet": {
+      "size": 3,
+      "blank": 0
+    },
+    "initial": "q0",
+    "accepting": [
+      "qhalt"
+    ],
+    "transitions": [
+      {"from": "q0", "read": 0, "to": "q1", "write": {"value": 1}, "move": "N"},
+      {"from": "q0", "read": 1, "to": "q1", "write": {"value": 2}, "move": "N"},
+      {"from": "q0", "read": 2, "to": "q1", "write": {"value": 0}, "move": "N"},
+      {"from": "q1", "read": 0, "to": "qhalt", "write": {"value": 0}, "move": "N"},
+      {"from": "q1", "read": 1, "to": "q2", "write": {"value": 1}, "move": "N"},
+      {"from": "q1", "read": 2, "to": "q2", "write": {"value": 2}, "move": "N"},
+      {"from": "q2", "read": 0, "to": "q3", "write": {"value": 2}, "move": "N"},
+      {"from": "q2", "read": 1, "to": "q3", "write": {"value": 0}, "move": "N"},
+      {"from": "q2", "read": 2, "to": "q3", "write": {"value": 1}, "move": "N"},
+      {"from": "q3", "read": 0, "to": "qhalt", "write": {"value": 0}, "move": "N"},
+      {"from": "q3", "read": 1, "to": "q2", "write": {"value": 1}, "move": "N"},
+      {"from": "q3", "read": 2, "to": "q2", "write": {"value": 2}, "move": "N"}
+    ]
+  }
+}

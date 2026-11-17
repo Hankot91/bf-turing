@@ -1,0 +1,49 @@
+{
+  "name": "run-cinta-negativa",
+  "description": "El cabezal pasa a \u00edndices negativos (cinta bidireccional).",
+  "endpoint": "POST /api/run",
+  "httpStatus": 200,
+  "request": {
+    "code": "<++>+<.",
+    "input": "",
+    "cellSize": 256,
+    "maxSteps": 10000
+  },
+  "response": {
+    "version": 1,
+    "program": {
+      "instructions": [
+        {"index": 0, "op": "<", "src": 0, "match": null},
+        {"index": 1, "op": "+", "src": 1, "match": null},
+        {"index": 2, "op": "+", "src": 2, "match": null},
+        {"index": 3, "op": ">", "src": 3, "match": null},
+        {"index": 4, "op": "+", "src": 4, "match": null},
+        {"index": 5, "op": "<", "src": 5, "match": null},
+        {"index": 6, "op": ".", "src": 6, "match": null}
+      ],
+      "bracketPairs": []
+    },
+    "steps": [
+      {"n": 0, "pc": 0, "op": "<", "ptr": -1, "write": null, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q0", "read": 0, "to": "q1", "write": 0, "move": "L"}},
+      {"n": 1, "pc": 1, "op": "+", "ptr": -1, "write": {"index": -1, "value": 1}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q1", "read": 0, "to": "q2", "write": 1, "move": "N"}},
+      {"n": 2, "pc": 2, "op": "+", "ptr": -1, "write": {"index": -1, "value": 2}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q2", "read": 1, "to": "q3", "write": 2, "move": "N"}},
+      {"n": 3, "pc": 3, "op": ">", "ptr": 0, "write": null, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q3", "read": 2, "to": "q4", "write": 2, "move": "R"}},
+      {"n": 4, "pc": 4, "op": "+", "ptr": 0, "write": {"index": 0, "value": 1}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q4", "read": 0, "to": "q5", "write": 1, "move": "N"}},
+      {"n": 5, "pc": 5, "op": "<", "ptr": -1, "write": null, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q5", "read": 1, "to": "q6", "write": 1, "move": "L"}},
+      {"n": 6, "pc": 6, "op": ".", "ptr": -1, "write": null, "output": "\u0002", "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q6", "read": 2, "to": "qhalt", "write": 2, "move": "N"}}
+    ],
+    "result": {
+      "status": "halted",
+      "totalSteps": 7,
+      "output": "\u0002",
+      "finalPtr": -1,
+      "finalTape": {
+        "offset": -1,
+        "cells": [
+          2,
+          1
+        ]
+      }
+    }
+  }
+}

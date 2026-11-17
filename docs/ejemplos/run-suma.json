@@ -1,0 +1,74 @@
+{
+  "name": "run-suma",
+  "description": "Suma 2+3 moviendo la celda 0 a la celda 1. Cabezal se mueve y bucle simple.",
+  "endpoint": "POST /api/run",
+  "httpStatus": 200,
+  "request": {
+    "code": "++>+++<[->+<]>.",
+    "input": "",
+    "cellSize": 256,
+    "maxSteps": 10000
+  },
+  "response": {
+    "version": 1,
+    "program": {
+      "instructions": [
+        {"index": 0, "op": "+", "src": 0, "match": null},
+        {"index": 1, "op": "+", "src": 1, "match": null},
+        {"index": 2, "op": ">", "src": 2, "match": null},
+        {"index": 3, "op": "+", "src": 3, "match": null},
+        {"index": 4, "op": "+", "src": 4, "match": null},
+        {"index": 5, "op": "+", "src": 5, "match": null},
+        {"index": 6, "op": "<", "src": 6, "match": null},
+        {"index": 7, "op": "[", "src": 7, "match": 12},
+        {"index": 8, "op": "-", "src": 8, "match": null},
+        {"index": 9, "op": ">", "src": 9, "match": null},
+        {"index": 10, "op": "+", "src": 10, "match": null},
+        {"index": 11, "op": "<", "src": 11, "match": null},
+        {"index": 12, "op": "]", "src": 12, "match": 7},
+        {"index": 13, "op": ">", "src": 13, "match": null},
+        {"index": 14, "op": ".", "src": 14, "match": null}
+      ],
+      "bracketPairs": [
+        [
+          7,
+          12
+        ]
+      ]
+    },
+    "steps": [
+      {"n": 0, "pc": 0, "op": "+", "ptr": 0, "write": {"index": 0, "value": 1}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q0", "read": 0, "to": "q1", "write": 1, "move": "N"}},
+      {"n": 1, "pc": 1, "op": "+", "ptr": 0, "write": {"index": 0, "value": 2}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q1", "read": 1, "to": "q2", "write": 2, "move": "N"}},
+      {"n": 2, "pc": 2, "op": ">", "ptr": 1, "write": null, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q2", "read": 2, "to": "q3", "write": 2, "move": "R"}},
+      {"n": 3, "pc": 3, "op": "+", "ptr": 1, "write": {"index": 1, "value": 1}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q3", "read": 0, "to": "q4", "write": 1, "move": "N"}},
+      {"n": 4, "pc": 4, "op": "+", "ptr": 1, "write": {"index": 1, "value": 2}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q4", "read": 1, "to": "q5", "write": 2, "move": "N"}},
+      {"n": 5, "pc": 5, "op": "+", "ptr": 1, "write": {"index": 1, "value": 3}, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q5", "read": 2, "to": "q6", "write": 3, "move": "N"}},
+      {"n": 6, "pc": 6, "op": "<", "ptr": 0, "write": null, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q6", "read": 3, "to": "q7", "write": 3, "move": "L"}},
+      {"n": 7, "pc": 7, "op": "[", "ptr": 0, "write": null, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q7", "read": 2, "to": "q8", "write": 2, "move": "N"}},
+      {"n": 8, "pc": 8, "op": "-", "ptr": 0, "write": {"index": 0, "value": 1}, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q8", "read": 2, "to": "q9", "write": 1, "move": "N"}},
+      {"n": 9, "pc": 9, "op": ">", "ptr": 1, "write": null, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q9", "read": 1, "to": "q10", "write": 1, "move": "R"}},
+      {"n": 10, "pc": 10, "op": "+", "ptr": 1, "write": {"index": 1, "value": 4}, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q10", "read": 3, "to": "q11", "write": 4, "move": "N"}},
+      {"n": 11, "pc": 11, "op": "<", "ptr": 0, "write": null, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q11", "read": 4, "to": "q12", "write": 4, "move": "L"}},
+      {"n": 12, "pc": 12, "op": "]", "ptr": 0, "write": null, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q12", "read": 1, "to": "q8", "write": 1, "move": "N"}},
+      {"n": 13, "pc": 8, "op": "-", "ptr": 0, "write": {"index": 0, "value": 0}, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q8", "read": 1, "to": "q9", "write": 0, "move": "N"}},
+      {"n": 14, "pc": 9, "op": ">", "ptr": 1, "write": null, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q9", "read": 0, "to": "q10", "write": 0, "move": "R"}},
+      {"n": 15, "pc": 10, "op": "+", "ptr": 1, "write": {"index": 1, "value": 5}, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q10", "read": 4, "to": "q11", "write": 5, "move": "N"}},
+      {"n": 16, "pc": 11, "op": "<", "ptr": 0, "write": null, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q11", "read": 5, "to": "q12", "write": 5, "move": "L"}},
+      {"n": 17, "pc": 12, "op": "]", "ptr": 0, "write": null, "output": null, "inputConsumed": false, "loopDepth": 1, "delta": {"from": "q12", "read": 0, "to": "q13", "write": 0, "move": "N"}},
+      {"n": 18, "pc": 13, "op": ">", "ptr": 1, "write": null, "output": null, "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q13", "read": 0, "to": "q14", "write": 0, "move": "R"}},
+      {"n": 19, "pc": 14, "op": ".", "ptr": 1, "write": null, "output": "\u0005", "inputConsumed": false, "loopDepth": 0, "delta": {"from": "q14", "read": 5, "to": "qhalt", "write": 5, "move": "N"}}
+    ],
+    "result": {
+      "status": "halted",
+      "totalSteps": 20,
+      "output": "\u0005",
+      "finalPtr": 1,
+      "finalTape": {
+        "offset": 1,
+        "cells": [
+          5
+        ]
+      }
+    }
+  }
+}

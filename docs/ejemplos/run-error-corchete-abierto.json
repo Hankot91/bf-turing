@@ -1,0 +1,22 @@
+{
+  "name": "run-error-corchete-abierto",
+  "description": "Error: '[' sin cerrar.",
+  "endpoint": "POST /api/run",
+  "httpStatus": 400,
+  "request": {
+    "code": "++[>+<-",
+    "input": "",
+    "cellSize": 256,
+    "maxSteps": 10000
+  },
+  "response": {
+    "version": 1,
+    "error": {
+      "code": "UNBALANCED_BRACKET",
+      "message": "Falta cerrar el '[' de la posici\u00f3n 2",
+      "position": 2,
+      "line": 1,
+      "column": 3
+    }
+  }
+}

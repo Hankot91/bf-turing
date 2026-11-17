@@ -1,0 +1,28 @@
+{
+  "name": "validate-ok",
+  "description": "C\u00f3digo v\u00e1lido: devuelve instrucciones y pares de corchetes.",
+  "endpoint": "POST /api/validate",
+  "httpStatus": 200,
+  "request": {
+    "code": "+[->+<]"
+  },
+  "response": {
+    "version": 1,
+    "valid": true,
+    "instructions": [
+      {"index": 0, "op": "+", "src": 0, "match": null},
+      {"index": 1, "op": "[", "src": 1, "match": 6},
+      {"index": 2, "op": "-", "src": 2, "match": null},
+      {"index": 3, "op": ">", "src": 3, "match": null},
+      {"index": 4, "op": "+", "src": 4, "match": null},
+      {"index": 5, "op": "<", "src": 5, "match": null},
+      {"index": 6, "op": "]", "src": 6, "match": 1}
+    ],
+    "bracketPairs": [
+      [
+        1,
+        6
+      ]
+    ]
+  }
+}
